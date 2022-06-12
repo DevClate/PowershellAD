@@ -1,0 +1,9 @@
+#Remove users from security group in AD
+
+$SecurityGroup = Read-Host "Enter Security Group user will be removed from"
+$SecurityUser = Read-Host "Enter user name without @domain.com"
+$AdminCredentials = Get-Credential
+
+Remove-ADGroupMember -Credential $AdminCredentials -Identity $SecurityGroup -Members $SecurityUser
+
+Read-Host -Prompt "Press Enter to exit"
