@@ -1,0 +1,4 @@
+#Remove AD Computer 5/18/2022
+$ComputerName = Read-Host "Enter computer name example est-scc901134"
+$Credentials = "adminusername"
+Remove-ADComputer $ComputerName -credential $Credentials
