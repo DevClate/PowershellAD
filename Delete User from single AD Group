@@ -1,6 +1,0 @@
-#Delete User from AD Distribution Groups
-$UserToRemove = Read-Host "Input Windows Login without @domain.com
-$Credential = Get-Credential
-
-#Only removes them from DL after Identity
-Remove-ADGroupMember -Identity TestSecurityincident -Members $UserToRemove -Credential $Credential
