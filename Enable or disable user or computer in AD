@@ -1,0 +1,5 @@
+To enable or disable user or computer - DEFAULT is Disable User Account
+#https://www.techrepublic.com/article/11-powershell-commands-to-use-in-managing-active-directory/
+
+#Enable-ADAccount -Identity "ComputerName"
+Disable-ADAccount -Identity "Username"
