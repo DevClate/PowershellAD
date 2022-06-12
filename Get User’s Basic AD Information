@@ -1,0 +1,5 @@
+#Displays User Info
+#http://woshub.com/get-aduser-getting-active-directory-users-data-via-powershell/
+
+$username = Read-Host "Enter User's Windows Login"
+Get-ADUser -Identity $username -properties CN, DisplayName, DistinguishedName, Department, EmailAddress, MemberOf, Title, mobile
