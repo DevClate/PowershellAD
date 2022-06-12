@@ -1,0 +1,3 @@
+#Documentation https://www.techrepublic.com/article/11-powershell-commands-to-use-in-managing-active-directory
+
+Unlock-ADAccount -Identity "Username"
