@@ -1,0 +1,11 @@
+#AD - Hide in 365 Address book when using Azure AD Sync
+#https://www.tachytelic.net/2017/11/office-365-hide-a-user-from-gal-ad-sync/
+
+$UserName = Read-Host "Input Windows Login without @domain.com"
+
+#Add mail nickname for hiding addressbook
+#Documentation <https://social.technet.microsoft.com/Forums/lync/en-US/6811071e-f329-428e-a70d-8f05bbe61d1d/how-to-set-aduser-attribute-mailnickname?forum=winserverpowershell
+
+Get-ADUser $UserName -Properties MailNickName | Set-ADUser -Replace @{MailNickName = "$UserName"} -Credential $Credential
+
+Set-ADUser $UserName -Replace @{msExchHideFromAddressLists=$true} -Credential $Credential
