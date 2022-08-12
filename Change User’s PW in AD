@@ -1,8 +1,0 @@
-#Change user's PW in AD
-#Created 4/13/2022
-
-$UserName = Read-Host "Input users windows login"
-$NewPwd = Read-Host -Promt "Enter New Password" -AsSecureString
-$Credential = Get-Credential
-
-Set-ADAccountPassword -Identity $UserName -NewPassword $NewPwd -Reset -Credential $Credential

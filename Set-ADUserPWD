@@ -1,11 +1,13 @@
-#Remove AD Computer 5/18/2022
+#Change user's PW in AD
+#Created 4/13/2022
+
 [CmdletBinding()]
 param (
     [Parameter(Mandatory,HelpMessage='User to change password')]
     [string]$Identity,
 
-    [Parameter(Mandatory,HelpMessage='Computer Name to remove')]
-    [securestring]$ComputerName,
+    [Parameter(Mandatory,HelpMessage='Enter New Password')]
+    [securestring]$NewPwd,
 
     [Parameter(Mandatory)]
     [ValidateNotNull()]
@@ -15,4 +17,6 @@ param (
 
 )
 
-Remove-ADComputer $ComputerName -credential $Credentials
+
+
+Set-ADAccountPassword -Identity $Identity -NewPassword $NewPwd -Reset -Credential $Credential
