@@ -65,7 +65,6 @@ foreach ($User in $ADUsers) {
             HomeDirectory       = $HomeDirectory
             HomeDrive           = $HomeDrive
             Enabled             = $True
-
         }
         
         # User does not exist then proceed to create the new user account
