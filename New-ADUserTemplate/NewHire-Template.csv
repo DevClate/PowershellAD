@@ -1,0 +1,2 @@
+Password,UserName,FirstName,LastName,Company,Department,HomeDirectory,HomeDrive,OU,LogonScript,mailnickname,Email,StreetAddress,City,State,PostalCode,Manager,MobilePhone,OfficePhone,JobTitle,Website
+SuperSecretPassword123!,CTest2,CJ2,Test2,TestCompany,Accounting,\\Users\ctest2,X:,"OU=Accounting,OU=TestCompany Users,DC=domain,DC=local",testscript.bat,ctest2,ctest2@testcompany.com,3 Cool Pl,New York,NY,10022,,(123) 456-7890,(123) 456-7891,Accountant,www.testcompany.com
