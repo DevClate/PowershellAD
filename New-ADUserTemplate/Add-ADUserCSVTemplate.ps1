@@ -1,7 +1,7 @@
 # Import active directory module for running AD cmdlets
 Import-Module ActiveDirectory
   
-# Store the data from NewUsersFinal.csv in the $ADUsers variable
+# Store the data from NewHire-Template.csv in the $ADUsers variable
 $ADUsers = Import-Csv "C:\scripts\NewHire-Template.csv"
 
 # Define UPN
@@ -71,6 +71,7 @@ foreach ($User in $ADUsers) {
         # User does not exist then proceed to create the new user account
         # Account will be created in the OU provided by the $OU variable read from the CSV file
         New-ADUser @newUserParams -AccountPassword (ConvertTo-secureString $password -AsPlainText -Force)
+        
         #Sets Mailnickname and Logon Script
         Set-ADUser -identity $username -Replace @{mailnickname="$mailnickname"; ScriptPath="$scriptpath"}
 
