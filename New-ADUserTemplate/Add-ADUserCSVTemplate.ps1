@@ -4,8 +4,8 @@ Import-Module ActiveDirectory
 # Store the data from NewHire-Template.csv in the $ADUsers variable
 $ADUsers = Import-Csv "C:\scripts\NewHire-Template.csv"
 
-# Define UPN
-$UPN = "yourdomain.com"
+# Define Domain
+$Domain = "yourdomain.com"
 
 # Loop through each row containing user details in the CSV file
 foreach ($User in $ADUsers) {
@@ -48,7 +48,7 @@ foreach ($User in $ADUsers) {
             DisplayName         = "$firstname $lastname"
             Initials            = $initials
             SamAccountName      = $username
-            UserPrincipalName   = "$username@$UPN"
+            UserPrincipalName   = "$username@$Domain"
             EmailAddress        = $email
             Title               = $jobtitle
             StreetAddress       = $streetaddress
