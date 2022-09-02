@@ -31,7 +31,7 @@ Tired of always trying to remember which fields you need to enter in AD and clic
     $Domain = "yourdomain.com"
     ```
 
-6. Now we will match the CSV Headers with the AD Attributes and import them in for each user. I only put the first 3 to show the concept
+6. Now we will match the CSV Headers with the AD Attributes and import them in for each user.
 
     ```Powershell
     # Loop through each row containing user details in the CSV file
@@ -41,6 +41,24 @@ Tired of always trying to remember which fields you need to enter in AD and clic
     $username = $User.UserName
     $password = $User.password
     $firstname = $User.firstname
+    $lastname = $User.lastname
+    $initials = $User.initials
+    $OU = $User.ou #This field refers to the OU the user account is to be created in
+    $email = $User.email
+    $streetaddress = $User.streetaddress
+    $city = $User.city
+    $zipcode = $User.postalcode
+    $state = $User.state
+    $telephone = $User.officephone
+    $mobilephone = $User.mobilephone
+    $jobtitle = $User.jobtitle
+    $company = $User.company
+    $department = $User.department
+    $homepage = $User.website
+    $HomeDirectory = $User.HomeDirectory
+    $HomeDrive = $User.HomeDrive
+    $ScriptPath = $User.LogonScript
+    $mailnickname = $User.mailnickname
     ```
 
 7. Lets check to make sure the user isn't already there - This searches for the username as the SamAccountName and if it exists state it already exists
