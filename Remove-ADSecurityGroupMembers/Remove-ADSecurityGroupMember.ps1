@@ -21,12 +21,10 @@ param (
 
 )
 
-Remove-ADGroupMember -Credential $Credential -Identity $Identity -Members $Members
-
 Import-CSV -Path $Path | ForEach-Object {  
     $GroupUPN=$_.GroupUPN 
     Write-Progress -Activity "Removing user from $GroupUPN… "  
-    Remove-DistributionGroupMember –Identity $GroupUPN -Member $Member -Confirm:$false 
+    Remove-ADGroupMember –Identity $GroupUPN -Members $Members -Confirm:$false 
     If($?)  
     {  
     Write-Host User successfully removed from $GroupUPN -ForegroundColor Green  
