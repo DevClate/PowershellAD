@@ -1,6 +1,6 @@
 # Import active directory module for running AD cmdlets
 Import-Module ActiveDirectory
-  
+
 # Store the data from NewHire-Template.csv in the $ADUsers variable
 $ADUsers = Import-Csv "C:\scripts\NewHire-Template.csv"
 
